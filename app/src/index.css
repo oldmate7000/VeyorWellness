@@ -1,0 +1,67 @@
+#body {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.heading {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 7vh;
+}
+
+.bookingDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.userDetails {
+    display:flex;
+    flex-direction: column;
+}
+
+.labelledInput {
+    display:flex;
+    flex-direction: column;
+}
+#confirmation {
+    display: flex;
+    flex-direction: row;
+}
+
+#confirmation #bookingDetails {
+    margin: 10px 10px 10px 10px;
+    flex-grow: 1;
+}
+
+#confirmation #mobileAppCTA {
+    padding-left: 15px;
+    border-left: thin solid lightgray;
+    max-width:30%;
+}
+
+.btn-light {
+    border: thin solid black
+}
+
+.btn-light:hover{
+    border: thin solid black
+}
+
+.validEmailInput #usrPrompt {
+    visibility:hidden;
+}
+
+.validPhoneInput #usrPrompt {
+    visibility: hidden; 
+}
+
+.invalidEmailInput #usrPrompt {
+    visibility: visible;
+}
+
+.invalidPhoneInput #usrPrompt {
+    visibility: visible;
+}
