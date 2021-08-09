@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import qrcode from '../assets/qrcode.png'
 
 
-const bookingTypeExpander = {
+const bookingTypeExpander = { //mocked data otherwise called from api
     physio1: {
         title: "Physiotherapy",
         price: 45.00
@@ -31,21 +31,21 @@ function formatAMPM(date) {
     return strTime;
   }
 
-  function Confirmation(props) {
+function Confirmation(props) {
 
     const handleReschedule = () => {
-        props.setter('displayComponent', 'bookingdetails')
+        props.setDisplayComponent('bookingdetails')
     }
 
-    return (
+    return ( //reads off the proposed session details from properties and refelcts them to the user for confirmation
         <div id='confirmation'>
             <div id='bookingDetails'>
-                <h2>{bookingTypeExpander[props.bookingType].title}</h2>
-                <h2 >{days[props.bookingDateTime.getDay()]}, {months[props.bookingDateTime.getMonth()]} {props.bookingDateTime.getDate()}, {props.bookingDateTime.getFullYear()}</h2>
-                <h2>{formatAMPM(props.bookingDateTime)}</h2>
-                <div>Veyor Wellness ${bookingTypeExpander[props.bookingType].price.toFixed(2)}</div>
+                <h2>{bookingTypeExpander[props.sessionDetails.bookingType].title}</h2>
+                <h2 >{days[props.sessionDetails.bookingDateTime.getDay()]}, {months[props.sessionDetails.bookingDateTime.getMonth()]} {props.sessionDetails.bookingDateTime.getDate()}, {props.sessionDetails.bookingDateTime.getFullYear()}</h2>
+                <h2>{formatAMPM(props.sessionDetails.bookingDateTime)}</h2>
+                <div>Veyor Wellness ${bookingTypeExpander[props.sessionDetails.bookingType].price.toFixed(2)}</div>
                 <div className='input-group'>
-                    <div className='btn btn-dark' onClick={props.reset}>Cancel</div>
+                    <div className='btn btn-dark' onClick={props.reset}>Cancel</div> 
                     <div className='btn btn-dark' onClick={handleReschedule}>Reschedule</div>
                 </div>
                 <div className='btn btn-light' onClick={props.confirmAppointment}>Schedule another appointment»</div>
